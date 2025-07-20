@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: fastapi-app
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    name: your-app-name
+    runtime: python
+    pythonVersion: 3.11.8  # or use 3.10.13 (stable)
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.8
+      - key: ENV
+        value: production
